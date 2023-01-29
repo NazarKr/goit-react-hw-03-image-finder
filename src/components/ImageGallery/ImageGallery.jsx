@@ -1,11 +1,19 @@
 import React from "react";
 import '../Styles/styles.css'
+import ImageGalleryItem from '../ImageGalleryItem/ImageGalleryItem';
 
-const ImageGallery = () => {
 
+const ImageGallery = ({items}) => {
     return (
         <ul className="ImageGallery">
-            {/* <!-- Набір <li> із зображеннями --> */}
+            {items.map(({ id, webformatURL, largeImageURL }) => (
+                <ImageGalleryItem
+                    key={id}
+                    id={id}
+                    src={webformatURL}
+                    bigImage={largeImageURL}
+                />
+                ))}
         </ul>
     )
 
