@@ -4,7 +4,9 @@ import ImageGalleryItem from '../ImageGalleryItem/ImageGalleryItem';
 import Button from "components/Button/Button";
 
 
-const ImageGallery = ({ onClick, setImg, items, loadMore }) => {
+const ImageGallery = ({ onClick, setImg, items, loadMore, loading }) => {
+    const shouldRenderLoadMoreButton = items.length > 0 && !loading;
+
     return (
         <>
         <ul className="ImageGallery">
@@ -19,10 +21,10 @@ const ImageGallery = ({ onClick, setImg, items, loadMore }) => {
                     />
                 );
             })}
-        </ul>
-            <Button onClick={loadMore}>Load more</Button>
-        </>
+            </ul>
 
+        {shouldRenderLoadMoreButton && <Button onClick={loadMore}>Load more</Button>}
+        </>
     )
 
 };

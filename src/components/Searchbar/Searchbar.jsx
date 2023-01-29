@@ -43,8 +43,8 @@ class Searchbar extends Component {
                         type="text"
                         value={search}
                         onChange={hendleChange}
-                        // autocomplete="off"
-                        // autofocus
+                        // autoComplete="off"
+                        autoFocus
                         required
                         placeholder="Search images and photos"
                     />

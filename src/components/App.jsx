@@ -3,8 +3,8 @@ import './Styles/styles.css'
 import Searchbar from './Searchbar/Searchbar';
 import ImageGallery from './ImageGallery/ImageGallery';
 import ModalWindow from './Modal/ModalWindow';
-// import Button from './Button/Button';
 import { fetchImages } from '../components/Servises/images-api'
+import { ColorRing } from 'react-loader-spinner'
 
 export class App extends Component {
   state = {
@@ -13,7 +13,6 @@ export class App extends Component {
     loading: false,
     error: null,
     page: 1,
-    // perPege
     showModal: false,
     modalImg: null,
     imageDetails: null,
@@ -67,11 +66,11 @@ export class App extends Component {
   render() {
     const { items, loading, error, showModal, modalImg, page } = this.state;
     const { searchImages, loadMore, toggleModal, setModalImg } = this;
-    // const shouldRenderLoadMoreButton = items.length > 0 && !loading
 
     return (
       <div className='App'>
-        <Searchbar onSubmit={searchImages}/>
+        <Searchbar onSubmit={searchImages} />
+        
         <ImageGallery
           items={items}
           onClick={toggleModal}
@@ -80,9 +79,18 @@ export class App extends Component {
           loadMore={loadMore}
           pege={page}
         />
+
+        {loading && <ColorRing
+          visible={true}
+          height="80"
+          width="80"
+          ariaLabel="blocks-loading"
+          wrapperStyle={{}}
+          wrapperClass="blocks-wrapper"
+          colors={['#e15b64', '#f47e60', '#f8b26a', '#abbd81', '#849b87']}
+        />}
+
         {error && <p>{error}</p>}
-        {/* {shouldRenderLoadMoreButton && <Button onClick={loadMore}>Load more</Button>} */}
-        {/* <ModalWindow /> */}
         {showModal && (
           <ModalWindow
             onClick={toggleModal}
@@ -92,12 +100,3 @@ export class App extends Component {
     )
   }
 };
-
-
-// {
-//   showModal && (
-//     <ModalWindow onClose={this.toggleModal}>
-//       <FormicContact onSubmit={this.addContact} onClick={this.toggleModal} />
-//     </ModalWindow>
-//   )
-// }
