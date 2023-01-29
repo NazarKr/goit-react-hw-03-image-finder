@@ -3,7 +3,7 @@ import './Styles/styles.css'
 import Searchbar from './Searchbar/Searchbar';
 import ImageGallery from './ImageGallery/ImageGallery';
 import ModalWindow from './Modal/ModalWindow';
-import Button from './Button/Button';
+// import Button from './Button/Button';
 import { fetchImages } from '../components/Servises/images-api'
 
 export class App extends Component {
@@ -28,7 +28,7 @@ export class App extends Component {
     }
   }
 
-  fetchData = async (pege,) => {
+  fetchData = async (search, pege, perPage) => {
     try {
       this.setState({ loading: true });
       const { search, page } = this.state;
@@ -54,23 +54,9 @@ export class App extends Component {
   };
   
   loadMore = () => {
-    const {page} = this.state
+    const { page } = this.state;
     this.setState({page: page +1})
   }
-
-  // showModal = ({ largeImageURL }) => {
-  // this.setState({
-  //   imageDetails: { largeImageURL },
-  //   showModal: true,
-  // })
-  // }
-
-  // closeModal = () => {
-  //   this.setState({
-  //     showModal: false,
-  //     imageDetails: null,
-  //   })
-  // }
 
   toggleModal = () => {
     this.setState(({ showModal }) => ({
@@ -81,7 +67,7 @@ export class App extends Component {
   render() {
     const { items, loading, error, showModal, modalImg, page } = this.state;
     const { searchImages, loadMore, toggleModal, setModalImg } = this;
-    const shouldRenderLoadMoreButton = items.length > 0 && !loading
+    // const shouldRenderLoadMoreButton = items.length > 0 && !loading
 
     return (
       <div className='App'>
@@ -95,7 +81,7 @@ export class App extends Component {
           pege={page}
         />
         {error && <p>{error}</p>}
-        {shouldRenderLoadMoreButton && <Button onClick={loadMore}>Load more</Button>}
+        {/* {shouldRenderLoadMoreButton && <Button onClick={loadMore}>Load more</Button>} */}
         {/* <ModalWindow /> */}
         {showModal && (
           <ModalWindow

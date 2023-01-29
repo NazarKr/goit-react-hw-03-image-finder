@@ -1,8 +1,9 @@
+import ButtonIcon from 'components/Button/ButtonIcon';
 import { Component } from 'react';
-import { createPortal } from 'react-dom';
+// import { createPortal } from 'react-dom';
 import '../Styles/styles.css'
 
-const modalRoot = document.querySelector('#modal-root');
+// const modalRoot = document.querySelector('#modal-root');
 
 class ModalWindow extends Component {
     componentDidMount() {
@@ -28,18 +29,20 @@ class ModalWindow extends Component {
     };
 
     render() {
-        const { children } = this.props;
-        return createPortal(
+        const { onClick, children } = this.props;
+        return (
             <div
                 className="Overlay"
                 onClick={e => this.handleBackdropClick(e)}
             >
                 <div className="Modal">
-                    {/* <img src="" alt="" /> */}
+                    <ButtonIcon
+                    onClick={onClick}
+                    >Close</ButtonIcon>
                     {children}
                 </div>
-            </div>,
-            modalRoot
+            </div>
+            
         );
     }
 
