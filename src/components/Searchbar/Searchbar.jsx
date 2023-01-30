@@ -5,7 +5,7 @@ class Searchbar extends Component {
     state = {
         search: "",
     }
-    
+
     hendleChange = ({ target }) => {
         const { name, value } = target;
         this.setState({ [name]: value });
@@ -52,8 +52,6 @@ class Searchbar extends Component {
             </header>
         )
     }
-
-    
 };
 
 export default Searchbar;

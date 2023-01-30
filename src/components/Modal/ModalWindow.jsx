@@ -28,8 +28,10 @@ class ModalWindow extends Component {
         }
     };
 
+
     render() {
         const { onClick, children } = this.props;
+        
         return (
             <div
                 className="Overlay"
@@ -37,12 +39,12 @@ class ModalWindow extends Component {
             >
                 <div className="Modal">
                     <ButtonIcon
-                    onClick={onClick}
+                        onClick={onClick}
                     >Close</ButtonIcon>
                     {children}
                 </div>
             </div>
-            
+
         );
     }
 
