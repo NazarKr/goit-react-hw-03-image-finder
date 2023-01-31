@@ -5,7 +5,7 @@ const ButtonIcon = ({ icon: Icon = null, type, disabled, children, onClick, icon
     return (
         <>
             <button
-                className="Button_close"
+                className="Button_icon"
                 type={type}
                 disabled={disabled}
                 onClick={onClick}

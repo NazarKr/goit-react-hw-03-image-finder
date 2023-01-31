@@ -1,5 +1,6 @@
-import ButtonIcon from '../Button/ButtonIcon';
 import React, { Component } from 'react';
+import ButtonIcon from '../Button/ButtonIcon';
+import { ImCancelCircle } from "react-icons/im";
 // import { createPortal } from 'react-dom';
 import '../Styles/styles.css'
 
@@ -40,7 +41,9 @@ class ModalWindow extends Component {
                 <div className="Modal">
                     <ButtonIcon
                         onClick={onClick}
-                    >Close</ButtonIcon>
+                    >
+                        <ImCancelCircle />
+                    </ButtonIcon>
                     {children}
                 </div>
             </div>

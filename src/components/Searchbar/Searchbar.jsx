@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import '../Styles/styles.css'
+import ButtonIcon from '../Button/ButtonIcon';
+import { ImSearch } from 'react-icons/im';
 
 class Searchbar extends Component {
     state = {
@@ -31,12 +33,13 @@ class Searchbar extends Component {
         return (
             <header className="Searchbar">
                 <form className="SearchForm" onSubmit={hendleSubmit}>
-                    <button
+                    <ButtonIcon
                         type="submit"
                         className="SearchForm-button"
                     >
+                        <ImSearch />
                         <span className="SearchForm-button-label">Search</span>
-                    </button>
+                    </ButtonIcon>
                     <input
                         className="SearchForm-input"
                         name="search"
