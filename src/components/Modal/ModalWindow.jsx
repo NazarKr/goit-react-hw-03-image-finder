@@ -1,5 +1,5 @@
-import ButtonIcon from 'components/Button/ButtonIcon';
-import { Component } from 'react';
+import ButtonIcon from '../Button/ButtonIcon';
+import React, { Component } from 'react';
 // import { createPortal } from 'react-dom';
 import '../Styles/styles.css'
 

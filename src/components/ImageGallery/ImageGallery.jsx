@@ -1,7 +1,7 @@
 import React from "react";
 import '../Styles/styles.css'
 import ImageGalleryItem from '../ImageGalleryItem/ImageGalleryItem';
-import Button from "components/Button/Button";
+import Button from '../Button/Button';
 
 const ImageGallery = ({ onClick, setImg, items, loadMore, loading }) => {
     const shouldRenderLoadMoreButton = items.length > 0 && !loading;
