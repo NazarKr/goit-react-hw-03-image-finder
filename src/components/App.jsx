@@ -3,8 +3,8 @@ import './Styles/styles.css'
 import Searchbar from './Searchbar/Searchbar';
 import ImageGallery from './ImageGallery/ImageGallery';
 import ModalWindow from './Modal/ModalWindow';
-import Spinner from './Loader/Spinner';
 import { fetchImages } from '../components/Servises/images-api'
+import { ColorRing } from 'react-loader-spinner'
 
 export class App extends Component {
   state = {
@@ -48,8 +48,8 @@ export class App extends Component {
     this.setState({ search, items: [], page: 1 });
   }
 
-  setModalImg = imageObj => {
-    this.setState({ modalImg: imageObj });
+  setModalImg = imgObj => {
+    this.setState({ modalImg: imgObj });
   };
   
   loadMore = () => {
@@ -80,7 +80,15 @@ export class App extends Component {
           pege={page}
         />
 
-        {loading && <Spinner/>}
+        {loading && <ColorRing
+          visible={true}
+          height="80"
+          width="80"
+          ariaLabel="blocks-loading"
+          wrapperStyle={{}}
+          wrapperClass="blocks-wrapper"
+          colors={['#e15b64', '#f47e60', '#f8b26a', '#abbd81', '#849b87']}
+        />}
 
         {error && <p>{error}</p>}
         {showModal && (

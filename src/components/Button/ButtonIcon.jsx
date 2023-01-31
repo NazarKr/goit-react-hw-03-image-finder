@@ -1,11 +1,12 @@
 import React from 'react';
 import '../Styles/styles.css'
 
-const ButtonIcon = ({ icon: Icon = null, type, disabled, children, onClick, iconSize }) => {
+
+
+const ButtonIcon = ({ icon: Icon = null, type, disabled, children, onClick, iconSize}) => {
     return (
         <>
             <button
-                className="Button_close"
                 type={type}
                 disabled={disabled}
                 onClick={onClick}
@@ -19,6 +20,8 @@ const ButtonIcon = ({ icon: Icon = null, type, disabled, children, onClick, icon
 ButtonIcon.defaultProps = {
     onClick: () => null,
     children: null,
+    // primary: null,
 };
+
 
 export default ButtonIcon;

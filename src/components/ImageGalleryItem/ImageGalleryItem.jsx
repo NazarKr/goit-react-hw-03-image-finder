@@ -8,7 +8,6 @@ const ImageGalleryItem = ({ onClick, item, setImg }) => {
         webformatURL,
         tags,
     } = item;
-
     return (
         <li
             className="ImageGalleryItem"
@@ -21,7 +20,7 @@ const ImageGalleryItem = ({ onClick, item, setImg }) => {
             }}
             key={id}
         >
-            <img src={webformatURL} alt={tags} className="ImageGalleryItem-image" loading="lazy" width="800" height="600" />
+            <img src={webformatURL} alt={tags} className="ImageGalleryItem-image" loading="lazy" />
         </li>
     )
 };
