@@ -1,12 +1,11 @@
-import Button from "../Button/Button";
-import React, { Component } from 'react';
+import { Component } from "react";
 import '../Styles/styles.css'
 
 class Searchbar extends Component {
     state = {
         search: "",
     }
-    
+
     hendleChange = ({ target }) => {
         const { name, value } = target;
         this.setState({ [name]: value });
@@ -32,12 +31,12 @@ class Searchbar extends Component {
         return (
             <header className="Searchbar">
                 <form className="SearchForm" onSubmit={hendleSubmit}>
-                    <Button
+                    <button
                         type="submit"
                         className="SearchForm-button"
                     >
                         <span className="SearchForm-button-label">Search</span>
-                    </Button>
+                    </button>
                     <input
                         className="SearchForm-input"
                         name="search"
@@ -53,8 +52,6 @@ class Searchbar extends Component {
             </header>
         )
     }
-
-    
 };
 
 export default Searchbar;

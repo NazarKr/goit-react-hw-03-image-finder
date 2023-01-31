@@ -1,5 +1,5 @@
-import ButtonIcon from '../Button/ButtonIcon';
-import React, { Component } from 'react';
+import ButtonIcon from 'components/Button/ButtonIcon';
+import { Component } from 'react';
 // import { createPortal } from 'react-dom';
 import '../Styles/styles.css'
 
@@ -28,8 +28,10 @@ class ModalWindow extends Component {
         }
     };
 
+
     render() {
         const { onClick, children } = this.props;
+        
         return (
             <div
                 className="Overlay"
@@ -37,12 +39,12 @@ class ModalWindow extends Component {
             >
                 <div className="Modal">
                     <ButtonIcon
-                    onClick={onClick}
+                        onClick={onClick}
                     >Close</ButtonIcon>
                     {children}
                 </div>
             </div>
-            
+
         );
     }
 
